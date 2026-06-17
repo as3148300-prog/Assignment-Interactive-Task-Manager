@@ -1,0 +1,282 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.circlediv{
+    height: 10px;
+    width: 10px;
+    display: fixed;
+    border: 1px solid white;
+    position: absolute;
+    background-color: #000000;
+   transition: cubic-bezier(0.19, 1, 0.22, 1).7s;
+    border-radius: 50px;
+    pointer-events: none;
+    z-index: 32423;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+main{
+    height: 100%;
+    width: 100%;
+}
+ .loginsection{
+    height: 100%;
+    width: 100%;
+    display: flex;   
+   
+ }
+ .loginpart1{
+    background-color: #FFEFB5;
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+     
+flex-direction: column;
+    width: 50%;
+
+ }
+ .loginpart2{
+    background-color: yellow;
+    height: 100%;
+    width: 90%;
+    overflow: hidden;
+ }
+ .loginpart2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+    object-position: center;
+    transition: cubic-bezier(0.19, 1, 0.22, 1)1s;
+ }
+ .loginpart2:hover img{
+    scale: 1.1;
+ }
+ /* login section right and mousemover section done */
+
+ .loginpart1 h3{
+ font-family: "Elms Sans", sans-serif;
+ font-size: 1.9vw;
+ text-align: center;
+ margin-bottom: 1.5vw;
+ line-height: 1.2;
+ }
+ .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+ }
+ .inputs h4{
+    font-size: 1vw;
+ font-family: "Elms Sans", sans-serif;
+
+ }
+ .inputs input{
+    padding: 0 .5vw;
+    border: 1px solid black;
+    height: 40px;
+    width: 18vw;
+     border-radius: 6px;
+     font-size: 20px;
+ font-family: "Elms Sans", sans-serif;
+ cursor: pointer; 
+     outline: none;
+ }
+ .inputparentdiv{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+ }
+ .loginpart1 button{ 
+    padding: .5vw 6vw;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #f6a7a7;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer; 
+    box-shadow: 5px 5px 0 #000;
+ 
+ margin-top: .7vw;
+ transition: cubic-bezier(0.19, 1, 0.22, 1).5s;
+ }
+
+
+ .loginpart1 button:hover{
+   box-shadow: -5px -5px 0 #000;
+ }
+ .loginpart1 button:active{
+    scale: .9;
+ }
+ .loginpart1 h6{
+    font-size: .8rem ;
+ font-family: "Elms Sans", sans-serif;
+
+ }
+ .loginpart1 h6 span{
+    text-decoration: underline;
+    cursor: pointer;
+   
+ }
+ 
+
+ /* login page done */
+
+ /* Mobile */
+@media (max-width: 480px) {
+ .loginsection{
+    height: 100%;
+    width: 100%;
+    display: flex;   
+    
+ }
+ .loginpart1{
+    background-color: #FFEFB5;
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+     
+flex-direction: column;
+    width: 100%;
+
+ }
+ .loginpart2{
+    background-color: yellow;
+    height: 100%;
+    width: 90%;
+    overflow: hidden;
+    display: none;
+ }
+ .loginpart2 img{
+  display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: cubic-bezier(0.19, 1, 0.22, 1)1s;
+ }
+ .loginpart2:hover img{
+    scale: 1.1;
+
+ }
+ /* login section right and mousemover section done */
+
+ .loginpart1 h3{
+ font-family: "Elms Sans", sans-serif;
+ font-size: 30px;
+ text-align: center;
+ 
+ line-height: 1.2;
+ }
+ .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+ }
+ .inputs h4{
+ font-family: "Elms Sans", sans-serif;
+ font-size: 15px;
+
+ }
+ .inputs input{
+    padding: 0 5px;
+    border: 1px solid black;
+    height: 30px;
+     width: 170px;
+     border-radius: 6px;
+     font-size: 10px;
+ font-family: "Elms Sans", sans-serif;
+ cursor: pointer;
+
+     outline: none;
+ }
+ .inputparentdiv{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+ }
+ .loginpart1 button{
+  
+    padding: 8px 60px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #f6a7a7;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* 3D Look */
+    box-shadow: 5px 5px 0 #000;
+ 
+ margin-top: .7vw;
+ transition: cubic-bezier(0.19, 1, 0.22, 1).5s;
+ }
+
+
+ .loginpart1 button:hover{
+   box-shadow: -5px -5px 0 #000;
+ }
+ .loginpart1 button:active{
+    scale: .9;
+ }
+ .loginpart1 h6{
+    font-size: .8rem ;
+ font-family: "Elms Sans", sans-serif;
+
+ }
+ .loginpart1 h6 span{
+    text-decoration: underline;
+    cursor: pointer;
+ }
+ .circlediv{
+    height: 10px;
+    width: 10px;
+    display: none;
+    border: 1px solid white;
+    position: absolute;
+    background-color: #000000;
+   transition: cubic-bezier(0.19, 1, 0.22, 1).7s;
+    border-radius: 50px;
+    pointer-events: none;
+    z-index: 32423;
+}
+
+}
+
+/* Large Mobile */
+@media (max-width: 576px) {
+
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Laptop */
+@media (max-width: 992px) {
+
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+
+}
+
+ 
+
+
+
