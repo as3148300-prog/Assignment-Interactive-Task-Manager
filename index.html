@@ -1,23 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Imperial+Script&family=Lugrasimo&family=Monsieur+La+Doulaise&family=Tangerine:wght@400;700&family=Yesteryear&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Imperial+Script&family=Lugrasimo&family=Monsieur+La+Doulaise&family=Tangerine:wght@400;700&family=Yesteryear&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Imperial+Script&family=Lugrasimo&family=Metamorphous&family=Monsieur+La+Doulaise&family=Tangerine:wght@400;700&family=Yesteryear&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="circlediv"></div>
     <main>
-        <div class="loginsection">
+      <div class="loginsection">
+
+
             <div class="loginpart1">
                 <h3 id="loginhead">Welcome! Let's <br> get started.</h3>
                 <div class="inputparentdiv">
@@ -46,13 +57,47 @@
             <div class="loginpart2"><img
                     src="https://www.srqmagazine.com/_images/images/srqdaily/content/20220128140147754.png" alt="">
             </div>
+
         </div>
+
+      <div id="task" class="addtasksection">
+        <div class="closediv"><i class="ri-close-line"></i></div>
+        <h1 id="addtaskh1">Add Your Task</h1>
+          <div class="taskinputs">
+             <h3 id="Name"> 1. Enter Your task name</h3>
+             <input type="text">
+          </div>
+            <div class="taskinputs discrip">
+             <h3 id="discrip">2. Enter Your task discription</h3>
+             <input type="text">
+          </div>
+            <div class="tasksectionbutton">
+                <button id="add">Add Task</button>
+                <button id="canceltaskbtn" class="redbtn">Cancel</button>
+            </div>
+      </div>
+      <div class="herosection">
+        <div class="heronav">
+          <div class="navpart1">
+            <h1 id="navpart1h1">Manage Your Task</h1>
+          </div>
+          <div class="navpart2">
+            <i id="navpart2i" class="ri-sun-line"></i>
+
+            <button id="addtask" class="color">Add task</button>
+            <button id="sectionsignout" class="white color">Sign out</button>
+          </div>
+        </div>
+        <div class="bordersection">
+          <div class="borderitem1">
+            <h3 id="borderitemh3"><i class="ri-list-check"></i> List</h3>
+          </div>
+          <div class="borderitem2">
+            <h3 id="borderitemh2"><i class="ri-global-line"></i> Work FLow</h3>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
-
-
-
-

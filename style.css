@@ -15,7 +15,7 @@
    transition: cubic-bezier(0.19, 1, 0.22, 1).7s;
     border-radius: 50px;
     pointer-events: none;
-    z-index: 32423;
+    z-index: 324232635463546;
 }
 html, body {
   height: 100%;
@@ -24,6 +24,7 @@ html, body {
 main{
     height: 100%;
     width: 100%;
+    position: relative;
 }
  .loginsection{
     height: 100%;
@@ -277,6 +278,206 @@ flex-direction: column;
 }
 
  
+.herosection{
+   height: 100%;
+   width: 100%;
+ 
+   background-color: #FFEFB5;
+   display: none;
+   transition: cubic-bezier(0.19, 1, 0.22, 1)1s;
+   
+   
+}
+.heronav{
+   padding: 0 2%;
+   height: 15%;
+   width: 100%;
+  border-bottom: 2px solid rgb(0, 0, 0);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+}
+.navpart1 h1{
+ font-family: "Metamorphous", serif;
+ font-weight: 500;
+  font-size: 2.5vw;
 
+}
+.navpart2{
+ 
+   gap : 40px ;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.navpart2 button{
+    padding: .6vw 1.7vw;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #44d7ce;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+ font-family: "Elms Sans", sans-serif;
+  
+    /* 3D Look */
+    box-shadow: 5px 5px 0 #000;
+ 
+ margin-top: .7vw;
+ transition: cubic-bezier(0.19, 1, 0.22, 1).5s;
+}
+.navpart2 .white{
+   background-color: rgb(238, 94, 94);
+}
+.navpart2 button:hover{
+   box-shadow: -5px -5px 0 #000 !important;
+ }
+ .navpart2 button:active{
+    scale: .9;
+ }
+ .navpart2 button.dark-themed:hover {
+   box-shadow: -5px -5px 0 rgb(206, 194, 194) !important; /* !important lagaya */
+}
+ .bordersection{
+   height: 8%;
+   width: 100%;
+   border-bottom:2px solid black ;
+   display: flex;
+   padding-left: 5vw;
+   gap: 20px;
+ }
+ .navpart2 i {
+   font-size: 1.6vw;
+   margin-top: 1vw;
+   cursor: pointer; 
+   transition: cubic-bezier(0.19, 1, 0.22, 1)1s;
+ }
+ .borderitem1{
+   height: 100%;
+   width: 5%;
+   border-right: 2px solid black;
+   border-left: 2px solid black;
+  background-color: #f6a7a7;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .borderitem1 h3{
+   font-size: 1vw;
+ font-family: "Elms Sans", sans-serif;
 
+ }
+ .borderitem2{
+   padding: 0 1vw;
+   height: 100%;
+   width:fit-content;
+   border-right: 2px solid black;
+   border-left: 2px solid black;
 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .borderitem2 h3{
+   font-size: 1vw;
+ font-family: "Elms Sans", sans-serif;
+
+ }
+ .addtasksection{
+   display: none;
+   
+   height: 55%;
+   width: 36%;
+   position: fixed;
+   background-color:  #FFEFB5;
+   border: 2px solid black;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50% , -50%);
+   z-index: 44254524;
+   padding: 3%;
+ }
+ .addtasksection h1{
+   text-align: center;
+ font-family: "Elms Sans", sans-serif;
+
+ }
+ .closediv{
+   height: 40px;
+   width: 40px;
+   border-radius: 50px;
+   background-color: rgb(2, 2, 2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: -3%;
+   right: -2%;
+   cursor: pointer;
+   border: 2px solid white;
+   
+ }
+ .closediv i{
+   font-size: 27px;
+   color: white;
+ }
+ .addtasksection h3{
+ font-family: "Elms Sans", sans-serif; 
+   font-weight: 400;
+   font-size: 1vw;
+   color: black;
+ }
+ .taskinputs{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 2vw;
+ }
+ .taskinputs input{
+    padding: 0 .5vw;
+    border: 1px solid black;
+    height: 55px;
+    width: 25vw;
+     border-radius: 6px;
+     font-size: 25px;
+ font-family: "Elms Sans", sans-serif;
+ cursor: pointer; 
+     outline: none;
+    
+ }
+ .dateselection{
+   display: flex;
+ }
+ .tasksectionbutton{
+   display: flex;
+   margin-top: 3vw;
+   justify-content: space-between;
+   padding: 0 1vw;
+ }
+ .tasksectionbutton button{
+   padding: 16px 60px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #44D7CE;
+    border: 3px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* 3D Look */
+    box-shadow: 5px 5px 0 #000;
+ 
+ margin-top: .7vw;
+ transition: cubic-bezier(0.19, 1, 0.22, 1).5s;
+ } 
+ .tasksectionbutton .redbtn{
+   background-color:rgb(238, 94, 94) ;
+ }
+ .tasksectionbutton button:active{
+    scale: .9;
+ }
+.tasksectionbutton button:hover{
+   box-shadow: -5px -5px 0 #000;
+ }
