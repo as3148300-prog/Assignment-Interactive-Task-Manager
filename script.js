@@ -1,11 +1,12 @@
 function mousemover() {
-    let circle = document.querySelector(".circlediv")
+    let circle = document.querySelector(".circlediv");
 
-    window.addEventListener("mousemove", function (dets) {
+    document.addEventListener("mousemove", function (dets) {
         circle.style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
-    })
+    });
 }
-mousemover()
+
+mousemover();
 
 function loginfnc() {
     //selections
@@ -178,8 +179,15 @@ function theme() {
             document.querySelector("#add").style.backgroundColor = "#44D7CE"
             document.querySelector("#add").style.color = "#000"
             document.querySelector("#Name").style.color = "black"
-            document.querySelector("#discrip").style.color = "black"
-
+            document.querySelector("#cat").style.color = "black"
+            document.querySelector("#blankimg").src = "img1.png"
+            
+       document.querySelectorAll(".taskname").forEach(elem => {
+        elem.style.color = "black"
+       });
+ document.querySelectorAll(".category").forEach(elem => {
+        elem.style.color = "black"
+       });
 
 
 
@@ -208,8 +216,15 @@ function theme() {
             document.querySelector("#add").style.backgroundColor = "white"
             document.querySelector("#add").style.color = "black"
             document.querySelector("#Name").style.color = "white"
-            document.querySelector("#discrip").style.color = "white"
-
+            document.querySelector("#cat").style.color = "white"
+             document.querySelector("#blankimg").src = "img2.png"
+       
+  document.querySelectorAll(".taskname").forEach(elem => {
+        elem.style.color = "white"
+       });
+        document.querySelectorAll(".category").forEach(elem => {
+        elem.style.color = "white"
+       });
         }
     })
 }
@@ -227,12 +242,12 @@ function addtaskbtn() {
             document.querySelector(".herosection").style.filter = "blur(8px)"
             document.querySelector(".herosection").style.filter = "blur(8px)"
             document.querySelector(".herosection").style.pointerEvents = "none"
-            taskbtnon = true  // Yahan 'taskbtnon' ko true karo, na ki 'taskbtn' ko
+            taskbtnon = true  
 
         } else {
             tasksection.style.display = "none"
 
-            taskbtnon = false // Wapas false kar do taaki agli baar click karne par khule
+            taskbtnon = false  
             document.querySelector(".herosection").style.filter = "blur(0px)"
 
         }
@@ -241,13 +256,13 @@ function addtaskbtn() {
 
     xclose.addEventListener("click", function () {
         tasksection.style.display = "none"
-        taskbtnon = false // Wapas false kar do taaki agli baar click karne par khule
+        taskbtnon = false  
         document.querySelector(".herosection").style.filter = "blur(0px)"
         document.querySelector(".herosection").style.pointerEvents = "all"
     })
 document.querySelector("#canceltaskbtn").addEventListener("click",function(){
        tasksection.style.display = "none"
-        taskbtnon = false // Wapas false kar do taaki agli baar click karne par khule
+        taskbtnon = false  
         document.querySelector(".herosection").style.filter = "blur(0px)"
         document.querySelector(".herosection").style.pointerEvents = "all"
 })
@@ -255,13 +270,101 @@ document.querySelector("#canceltaskbtn").addEventListener("click",function(){
 }
 addtaskbtn()
 
-function signoutbtn() {
-    document.querySelector("#sectionsignout").addEventListener("click", function () {
-        document.querySelector(".loginsection").style.display = "flex"
-        document.querySelector(".herosection").style.display = "none"
-    })
-}
-signoutbtn()
+ function editfnc(){
+     let currentEditTask = null;
+let taskaddbtn = document.querySelector("#add");
+let listsection = document.querySelector(".listsection");
 
 
+document.addEventListener("click", function(e){
+
+    let editBtn = e.target.closest(".ri-pencil-line");
+
+    if(!editBtn) return;
+
+    let list = editBtn.closest(".list");
+
+    document.querySelector("#taskname").value =
+    list.querySelector(".taskname").textContent;
+
+    document.querySelector("#category").value =
+    list.querySelector(".category").textContent;
+
+    document.querySelector("#task").style.display = "block";
+
+    currentEditTask = list;
+});
+
+
+
+
+taskaddbtn.addEventListener("click", function(){
+
+    let newName = document.querySelector("#taskname").value;
+    let newCategory = document.querySelector("#category").value;
+
+    if(!newName || !newCategory) return;
  
+    if(currentEditTask){
+
+        currentEditTask.querySelector(".taskname").textContent = newName;
+        currentEditTask.querySelector(".category").textContent = newCategory;
+
+        currentEditTask = null;
+
+    } 
+   else {
+
+    listsection.innerHTML += `
+    <div class="list">
+        <div class="listright">
+            <h1 class="taskname">${newName}</h1>
+            <h4 class="category">${newCategory}</h4>
+        </div>
+        <div class="listleft">
+            <i class="ri-check-line"></i>
+            <i class="ri-pencil-line"></i>
+            <i class="ri-close-large-line"></i>
+        </div>
+    </div>`;
+ 
+    document.querySelector(".listimgcontainer").style.display = "none";
+}
+
+    document.querySelector("#taskname").value = "";
+    document.querySelector("#category").value = "";
+});
+
+document.addEventListener("click", function(e){
+
+    let list = e.target.closest(".list");
+    if(!list) return;
+ 
+    if(e.target.classList.contains("ri-check-line")){
+        list.querySelector(".taskname").style.textDecoration = "line-through";
+        e.target.style.display = "none";
+        list.querySelector(".ri-pencil-line").style.display = "none";
+    }
+ 
+    if(e.target.classList.contains("ri-close-large-line")){
+        list.remove();
+
+        if(document.querySelectorAll(".list").length === 0){
+            document.querySelector(".listimgcontainer").style.display = "block";
+        }
+    }
+ 
+    if(e.target.classList.contains("ri-pencil-line")){
+        document.querySelector("#taskname").value =
+        list.querySelector(".taskname").textContent;
+
+        document.querySelector("#category").value =
+        list.querySelector(".category").textContent;
+
+        document.querySelector("#task").style.display = "block";
+
+        currentEditTask = list;
+    }
+});
+ }
+ editfnc()
