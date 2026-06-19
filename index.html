@@ -112,7 +112,58 @@
           </div>
         </div>
 
-
+<section class="render-pipeline">
+  <h2>Browser Rendering Pipeline</h2>
+  <p class="intro">Jab browser kisi webpage ko load karta hai, to HTML aur CSS ko parse karke screen par pixels banane tak ye steps follow hote hain:</p>
+ 
+  <div class="pipeline-columns">
+    <!-- HTML side -->
+    <div class="pipeline-col">
+      <div class="step">
+        <span class="tag">HTML</span>
+        <h3>HTML File</h3>
+        <p>Browser .html file ko padhna shuru karta hai (Parsing).</p>
+      </div>
+ 
+      <div class="arrow">↓ Tokenization</div>
+ 
+      <div class="step">
+        <h3>Tokens</h3>
+        <p>HTML ko chhote-chhote tokens mein toda jata hai — jaise tags, attributes, text.</p>
+      </div>
+ 
+      <div class="arrow">↓</div>
+ 
+      <div class="step">
+        <h3>DOM Tree</h3>
+        <p>Tokens se ek tree banta hai, jisme har element ek node hota hai (parent-child relation ke saath).</p>
+      </div>
+    </div>
+ 
+    <!-- CSS side -->
+    <div class="pipeline-col">
+      <div class="step">
+        <span class="tag">CSS</span>
+        <h3>CSS Rules</h3>
+        <p>Browser saare CSS (inline, internal, external) ko parse karta hai.</p>
+      </div>
+ 
+      <div class="arrow">↓ Parsing</div>
+ 
+      <div class="step">
+        <h3>CSSOM Tree</h3>
+        <p>CSS rules se ek doosra tree banta hai, jisme har element ke final computed styles hote hain.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="arrow center">↓</div>
+ 
+  <div class="step final">
+    <h3>Render Tree</h3>
+    <p>DOM Tree + CSSOM Tree combine hote hain. Sirf wahi nodes is tree mein aate hain jo screen par dikhne wale hain (jaise display:none wale elements skip ho jaate hain). Yahi Render Tree aage Layout aur Paint ke liye base banta hai.</p>
+  </div>
+</section>
       </div>
     </div>
     </div>

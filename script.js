@@ -8,32 +8,27 @@ function mousemover() {
 
 mousemover();
 
+let workflow = false
+document.querySelector(".borderitem2").addEventListener("click",function(){
+ if(!workflow){
+    document.querySelector(".render-pipeline").style.display = "block"
+    document.querySelector(".listsection").style.display = "none"
+    workflow = true ;
+    document.querySelector(".borderitem1").style.backgroundColor = "transparent"
+     document.querySelector(".borderitem2").style.backgroundColor = " #f6a7a7"
+ }  
+})
+document.querySelector(".borderitem1").addEventListener("click",function(){
+     document.querySelector(".render-pipeline").style.display = "none"
+    document.querySelector(".borderitem1").style.backgroundColor = "#f6a7a7"
+     document.querySelector(".borderitem2").style.backgroundColor = "  transparent"
+     document.querySelector(".listsection").style.display = "block"
+    workflow = false
+})
 function loginfnc() {
-    //selections
-    //areaselection 
     let loginsection = document.querySelector(".loginpart1")
     let loginsection2 = document.querySelector(".loginsection")
 
-    //textselections
-    let loginheadh1 = document.querySelector("#loginheadh1")
-
-    //email
-    let emailtext = document.querySelector("#emailtext")
-    let emailinput = document.querySelector("#email")
-
-    //password
-    let passtext = document.querySelector("#textpass")
-    let passwordinput = document.querySelector("#password")
-
-    //confirmpass
-    let confirmpasstext = document.querySelector("#confirmpass")
-    let confirmpassinp = document.querySelector("#confirmpassinp")
-
-    //buttons
-    let parrentbtn = document.querySelector("#mainbutton")
-    let childbtn = document.querySelector("#loginbutton")
-
-    //defaultmailpass
     let pass = "areeb@123"
     let email = "areeb@gmail.com"
 
@@ -240,7 +235,6 @@ function addtaskbtn() {
         if (!taskbtnon) {
             tasksection.style.display = "block"
             document.querySelector(".herosection").style.filter = "blur(8px)"
-            document.querySelector(".herosection").style.filter = "blur(8px)"
             document.querySelector(".herosection").style.pointerEvents = "none"
             taskbtnon = true  
 
@@ -318,7 +312,7 @@ taskaddbtn.addEventListener("click", function(){
     listsection.innerHTML += `
     <div class="list">
         <div class="listright">
-            <h1 class="taskname">${newName}</h1>
+            <h1 class="taskname"> ${newName}</h1>
             <h4 class="category">${newCategory}</h4>
         </div>
         <div class="listleft">
@@ -329,6 +323,16 @@ taskaddbtn.addEventListener("click", function(){
     </div>`;
  
     document.querySelector(".listimgcontainer").style.display = "none";
+}
+
+ let newTask = listsection.lastElementChild;
+
+if (document.querySelector("#navpart2i").classList.contains("ri-moon-line")) {
+    newTask.querySelector(".taskname").style.color = "white";
+    newTask.querySelector(".category").style.color = "white";
+} else {
+    newTask.querySelector(".taskname").style.color = "black";
+    newTask.querySelector(".category").style.color = "black";
 }
 
     document.querySelector("#taskname").value = "";
@@ -367,4 +371,17 @@ document.addEventListener("click", function(e){
     }
 });
  }
- editfnc()
+ editfnc()  
+ function signout() {
+    let signoutBtn = document.querySelector("#sectionsignout");
+
+    signoutBtn.addEventListener("click", function () {
+        document.querySelector(".herosection").style.display = "none";
+        document.querySelector(".loginsection").style.display = "flex";
+
+        document.querySelectorAll("input").forEach(input => {
+            input.value = "";
+        });
+    });
+} 
+signout();
